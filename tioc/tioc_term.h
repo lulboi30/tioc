@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <termios.h>
 #include <unistd.h>
+#include <sys/ioctl.h>
 
 #define dff(name, flag, type) \
   void name##_off() { \
@@ -32,7 +33,7 @@ dff(echo, ECHO, c_lflag);
 
 void gettermsize(unsigned short* width, unsigned short *height) {
   struct winsize ws;
-  iotcl(STDIN_FILENO, TIOCGWINSZ, &ws);
+  ioctl(STDIN_FILENO, TIOCGWINSZ, &ws);
   *width = ws.ws_col;
   *height = ws.ws_row;
 }

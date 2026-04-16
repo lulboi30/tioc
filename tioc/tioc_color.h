@@ -20,8 +20,8 @@
 #define COLOR_CYAN '6'
 #define COLOR_WHITE '7'
 
-#define FOREGROUND(color) '3'
-#define BACKGROUND(color) '4'
+#define FOREGROUND '3'
+#define BACKGROUND '4'
 
 #define setcolor8(color, plane)\
 	printf("\x1b[%c%cm", plane, color)
