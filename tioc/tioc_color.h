@@ -32,4 +32,7 @@
 #define setcolorRGB(r, g, b, plane)\
 	printf("\x1b[%c8;2;%i;%i;%im", plane, r, g, b)
 
+#define resetcolors()\
+  printf("\x1b[0m")
+
 #endif
